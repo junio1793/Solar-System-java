@@ -17,24 +17,5 @@ public class PlanetEndpoint {
     @Autowired
     private PlanetsService planetsService;
 
-    @GetMapping
-    public ResponseEntity<List<Planets>> getAll(){
-        List<Planets> result = planetsService.listarTudo();
-        return new ResponseEntity<>(result, HttpStatus.OK);
-    }
 
-    @GetMapping(value = "/{id}")
-    public ResponseEntity<Planets> findById(@PathVariable long id){
-        return ResponseEntity.ok(planetsService.findById(id));
-    }
-
-    @GetMapping(value = "/planetaMod2")
-    public ResponseEntity<List<Planets>> getTamanhoPar(){
-        return ResponseEntity.ok(planetsService.findtModPlanet());
-    }
-
-    @GetMapping(value = "/maiorPlaneta")
-    public ResponseEntity<Planets> getMaiorPlaneta(){
-        return ResponseEntity.ok(planetsService.findtBigesPlanet());
-    }
 }
