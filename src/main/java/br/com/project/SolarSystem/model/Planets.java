@@ -15,6 +15,8 @@ public class Planets {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "nome_planetas")
     private String nomePlanetas;
+    @Column(name = "tamanho")
     private double tamanho;
 }
